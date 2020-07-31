@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <title>Form Login</title>
+     </head>
+<body>
+
+     <div class="login-box">
+      <h1>Login Here</h1>
+       <form [formGroup]="myForm" (ngSubmit)="login()">
+               <!-- E-MAIL-->      
+        <div>
+         <label for="">Email (*)</label>
+         <input type="email" placeholder="Enter email" formControlName="email" [ngClass]="{error:myForm.get('email').hasError('required') && myForm.get('email').dirty}">
+        </div>
+       <div *ngIf="myForm.get('email').errors && myForm.get('email').dirty">
+      El campo es obligatorio
+     </div>
+               <!-- PASSWORD-->
+     <div>
+          <label for="">Password (*)</label>
+          <input type="password" placeholder="Enter Password" formControlName="password" [ngClass]="{error:myForm.get('password').hasError('required') && myForm.get('password').dirty, warning: myForm.get('password').hasError('minlength') && myForm.get('password').dirty, exceso: myForm.get('password').hasError('maxlength') && myForm.get('password').dirty }">
+     </div>
+     <div *ngIf="myForm.get('password').errors && myForm.get('password').dirty">
+          <p *ngIf="myForm.get('password').hasError('required')">El campo es obligatorio</p>
+          <p *ngIf="myForm.get('password').hasError('minlength')">Debe incluir almenos 6 caracteres</p>
+          <p *ngIf="myForm.get('password').hasError('maxlength')">Debe incluir máximo 10 caracteres</p>
+     </div>
+               <!--BUTTON-->
+     <input [disabled]="myForm.invalid" type="submit" value="Login" routerLink="/home">
+               <!-- Links -->
+     <p routerLink="">Don't have an account? Then click me!</p>
+ </form>
+     </div>
+
+</body>
+</html>
+
+
+

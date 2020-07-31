@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "discografica-9fe24": {
+      "hosting": {
+        "angularZ": [
+          "discografica-9fe24"
+        ]
+      }
+    }
+  }
+}

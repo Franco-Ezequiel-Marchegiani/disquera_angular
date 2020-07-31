@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Disquera | Bienvenidos</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <header>
+            <div class="contenedor">
+                <div id="marca"> <!--*** HEADER ***-->
+                    <h1><span class="resaltado">Disquera Argentina </span> de vinilos y CD'S </h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li type="submit" routerLink="/home">Inicio </li>
+                        <li type="submit" routerLink="/login"> Cerrar Sesión</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="cabecera">
+            <div class="contenedor">
+                <h1>Especialistas en ventas musical </h1>
+                <p>Brindandoles la mejor variedad, servicio y música a su hogar desde hace 10 años, muchas gracias por elegirnos!</p>
+            </div>
+        </section>
+
+        <section id="novedades">
+            <div class="contenedor">
+                <h3>Enterate de todas nuestras ofertas! Ingresa tu correo nuevamente para enviarte todas nuestras ofertas a tu correo electrónico</h3>
+                <form>
+                    <input type="email" name="email" placeholder="Ingrese su correo...">
+                    <button type="submit" class="boton1">Click me!</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="cajas"> <!--Cajas con las categorías de género-->
+            <div class="contenedor">
+                <div class="caja">
+                    <div *ngFor="let producto of productos">
+                        <app-producto [data]="producto"></app-producto>
+                        
+                </div>
+                </div>
+            </div>
+        
+        </section>
+
+        <footer>
+            <p>Disquera Argentina Web, Copyright &copy; 2020</p>
+        </footer>
+
+    </body>
+</html>

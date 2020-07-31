@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "angularZ",
+      "public": "dist/angularZ",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
